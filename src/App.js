@@ -1,11 +1,12 @@
 import Header from './components/Header';
-import CreateQuiz from './pages/CreateQuiz';
+import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 
 const App = () => {
 	return (
-		<div className='text-lg'>
+		<div className='text-lg font-main'>
 			<Header />
+			<Home />
 		</div>
 	);
 };
