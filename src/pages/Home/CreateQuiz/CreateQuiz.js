@@ -10,6 +10,7 @@ const CreateQuiz = props => {
 			currentRounds.push(props.quizValues);
 			localStorage.setItem('rounds', JSON.stringify(currentRounds));
 		}
+		props.setRoundAdded(!props.roundAdded);
 	};
 	return (
 		<div className='flex flex-col  items-center mr-2 w-1/2 bg-green-300 rounded p-4 shadow-xl'>
