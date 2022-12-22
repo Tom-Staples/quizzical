@@ -2,7 +2,12 @@
 module.exports = {
 	content: ['./src/**/*.{js,jsx}'],
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				title: ['LibreBaskerville', 'sans-serif'],
+				main: ['NotoSerifNPHmong', 'sans-serif']
+			}
+		}
 	},
 	plugins: []
 };
