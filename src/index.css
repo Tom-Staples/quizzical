@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: LibreBaskerville;
+    src: url('./assets/fonts/LibreBaskerville-Regular.ttf');
+}
+
+@font-face {
+    font-family: NotoSerifNPHmong;
+    src: url('./assets/fonts/NotoSerifNPHmong-VariableFont_wght.ttf');
+}
