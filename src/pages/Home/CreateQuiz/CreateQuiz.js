@@ -1,4 +1,4 @@
-const CreateQuiz = () => {
+const CreateQuiz = props => {
 	const inputStyle = 'rounded w-full pl-2 block mb-4';
 	return (
 		<div className='flex flex-col  items-center mr-2 w-1/2 bg-green-300 rounded p-4 shadow-xl'>
@@ -11,20 +11,43 @@ const CreateQuiz = () => {
 			</p>
 			<form className='mt-8'>
 				<label>Number of questions</label>
-				<input type='number' min='1' max='50' className={inputStyle} />
+				<input
+					type='number'
+					name='questions'
+					min='1'
+					max='50'
+					className={inputStyle}
+					value={props.quizValues.questions}
+					onChange={props.updateValues}
+				/>
 				<label>Select category</label>
-				<select className={inputStyle}>
+				<select
+					name='category'
+					value={props.quizValues.category}
+					onChange={props.updateValues}
+					className={inputStyle}
+				>
 					<option>Any Category</option>
 				</select>
 				<label>Select difficulty</label>
-				<select className={inputStyle}>
+				<select
+					name='difficulty'
+					value={props.quizValues.difficulty}
+					onChange={props.updateValues}
+					className={inputStyle}
+				>
 					<option>Any Difficulty</option>
 					<option>Easy</option>
 					<option>Medium</option>
 					<option>Hard</option>
 				</select>
 				<label>Select type</label>
-				<select className={inputStyle}>
+				<select
+					name='type'
+					value={props.quizValues.type}
+					onChange={props.updateValues}
+					className={inputStyle}
+				>
 					<option>Any Type</option>
 					<option>Multiple Choice</option>
 					<option>True / False</option>
