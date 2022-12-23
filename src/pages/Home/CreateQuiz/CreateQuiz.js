@@ -1,5 +1,10 @@
+// React modules
 import { useEffect, useState } from 'react';
+
+// Components
 import ErrorMessage from '../../../components/ErrorMessage/ErrorMessage';
+
+// Helpers
 import checkExisitingRounds from '../../../helpers/checkExisitingRounds';
 
 const CreateQuiz = props => {
@@ -60,7 +65,7 @@ const CreateQuiz = props => {
 					type='number'
 					name='questions'
 					min='1'
-					max='50'
+					max='15'
 					className={inputStyle}
 					value={props.quizValues.questions}
 					onChange={props.updateValues}
