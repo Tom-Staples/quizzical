@@ -10,9 +10,12 @@ const deleteQuizListItem = (e, stateUpdate) => {
 			difficulty !== roundParams[2] ||
 			type !== roundParams[3]
 	);
-	rounds = JSON.stringify(rounds);
-	localStorage.setItem('rounds', rounds);
-	stateUpdate(rounds);
+	let temp = JSON.stringify(rounds);
+	if (!rounds.length) {
+		temp = [];
+	}
+	localStorage.setItem('rounds', JSON.stringify(rounds));
+	stateUpdate(temp);
 };
 
 export default deleteQuizListItem;

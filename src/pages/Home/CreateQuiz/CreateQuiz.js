@@ -94,7 +94,7 @@ const CreateQuiz = props => {
 			{disabled && (
 				<ErrorMessage
 					message='This round already exists in your quiz'
-					styling='text-sm text-red-600 mt-4'
+					styling='text-sm text-red-600 mt-4 relative'
 				/>
 			)}
 		</div>

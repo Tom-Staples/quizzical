@@ -1,8 +1,8 @@
 const ErrorMessage = props => {
 	return (
 		<p className={props.styling}>
-			<span className='material-symbols-outlined'>warning</span>
-			<span className='align-top'>{props.message}</span>
+			<span className='material-symbols-outlined relative top-2'>warning</span>
+			<span>{props.message}</span>
 		</p>
 	);
 };
