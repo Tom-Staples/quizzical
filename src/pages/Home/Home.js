@@ -13,7 +13,7 @@ import useFetchData from '../../hooks/useFetchData';
 // Helpers
 import convertStorageToAPICall from '../../helpers/convertStorageToAPICall';
 
-const Home = () => {
+const Home = props => {
 	// State
 	const [categories] = useFetchData('https://opentdb.com/api_category.php');
 	const [quizValues, updateValues] = useStoreQuizValues({
@@ -45,6 +45,7 @@ const Home = () => {
 				className={`rounded w-100 p-2 block mx-auto ${buttonStyle}`}
 				onClick={() => {
 					convertStorageToAPICall(categories);
+					props.setMode('quiz');
 				}}
 			>
 				Lets get Quizzical!
