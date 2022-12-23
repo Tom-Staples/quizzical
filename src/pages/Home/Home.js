@@ -10,7 +10,7 @@ const Home = () => {
 		difficulty: 'Any Difficulty',
 		type: 'Any Type'
 	});
-	const [rounds, setRounds] = useState([]);
+	const [rounds, setRounds] = useState(localStorage.getItem('rounds') || []);
 
 	return (
 		<div>
