@@ -20,7 +20,7 @@ const Home = () => {
 					quizValues={quizValues}
 					setRounds={setRounds}
 				/>
-				<QuizList rounds={rounds} />
+				<QuizList rounds={rounds} setRounds={setRounds} />
 			</div>
 			<button className='bg-black text-white rounded w-100 p-2 block mx-auto hover:bg-blue-300'>
 				Lets get Quizzical!

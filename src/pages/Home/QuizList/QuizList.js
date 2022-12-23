@@ -1,3 +1,5 @@
+import deleteQuizListItem from '../../../helpers/deleteQuizListItem';
+
 const QuizList = props => {
 	const listStyle = 'w-1/4';
 	const headingStyle = 'w-1/4 underline text-xl';
@@ -14,7 +16,14 @@ const QuizList = props => {
 					<p className={listStyle}>{category}</p>
 					<p className={listStyle}>{difficulty}</p>
 					<p className={listStyle}>{type}</p>
-					<p className='material-symbols-outlined'>delete</p>
+					<button
+						className='material-symbols-outlined'
+						onClick={e => {
+							deleteQuizListItem(e, props.setRounds);
+						}}
+					>
+						delete
+					</button>
 				</li>
 			);
 		});
