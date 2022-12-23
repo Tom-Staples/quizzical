@@ -35,6 +35,16 @@ const CreateQuiz = props => {
 		}
 		props.setRounds(round);
 	};
+
+	// Custom logic
+	// Creating the category values
+	let categories = [];
+	if (props.categories.trivia_categories) {
+		categories = props.categories.trivia_categories.map(({ name, id }) => (
+			<option key={id}>{name}</option>
+		));
+	}
+
 	return (
 		<div className='flex flex-col  items-center mr-2 w-1/2 bg-green-300 rounded p-4 shadow-xl'>
 			<h2 className='text-2xl underline font-title'>Create Quiz</h2>
@@ -63,6 +73,7 @@ const CreateQuiz = props => {
 					className={inputStyle}
 				>
 					<option>Any Category</option>
+					{categories}
 				</select>
 				<label>Select difficulty</label>
 				<select
