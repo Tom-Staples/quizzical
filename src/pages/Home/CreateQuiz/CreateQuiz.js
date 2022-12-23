@@ -1,5 +1,24 @@
+import { useEffect, useState } from 'react';
+import checkExisitingRounds from '../../../helpers/checkExisitingRounds';
+
 const CreateQuiz = props => {
+	// State
+	// Controls whether the button is disabled
+	const [disabled, setDisabled] = useState(true);
+
+	// UseEffects
+	// updates disabled when a quiz value changes and a round is submitted
+	useEffect(() => {
+		setDisabled(checkExisitingRounds(props.quizValues));
+	}, [props.quizValues, props.rounds]);
+
+	// Styling
 	const inputStyle = 'rounded w-full pl-2 block mb-4';
+	const buttonStyle = disabled
+		? 'bg-gray-400 text-black'
+		: 'bg-black text-white hover:bg-blue-300';
+
+	// Event functions
 	const handleSubmit = e => {
 		e.preventDefault();
 		let currentRounds = localStorage.getItem('rounds'),
@@ -67,7 +86,7 @@ const CreateQuiz = props => {
 					<option>Multiple Choice</option>
 					<option>True / False</option>
 				</select>
-				<button className='bg-black text-white rounded w-full hover:bg-blue-300'>
+				<button disabled={disabled} className={`rounded w-full ${buttonStyle}`}>
 					Add Round
 				</button>
 			</form>

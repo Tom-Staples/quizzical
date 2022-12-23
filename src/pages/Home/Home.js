@@ -19,6 +19,7 @@ const Home = () => {
 					updateValues={updateValues}
 					quizValues={quizValues}
 					setRounds={setRounds}
+					rounds={rounds}
 				/>
 				<QuizList rounds={rounds} setRounds={setRounds} />
 			</div>
