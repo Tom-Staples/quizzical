@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ErrorMessage from '../../../components/ErrorMessage/ErrorMessage';
 import checkExisitingRounds from '../../../helpers/checkExisitingRounds';
 
 const CreateQuiz = props => {
@@ -90,6 +91,12 @@ const CreateQuiz = props => {
 					Add Round
 				</button>
 			</form>
+			{disabled && (
+				<ErrorMessage
+					message='This round already exists in your quiz'
+					styling='text-sm text-red-600 mt-4'
+				/>
+			)}
 		</div>
 	);
 };

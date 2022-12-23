@@ -1,8 +1,13 @@
 import deleteQuizListItem from '../../../helpers/deleteQuizListItem';
 
 const QuizList = props => {
-	const listStyle = 'w-1/4';
-	const headingStyle = 'w-1/4 underline text-xl';
+	// Styling
+	const listStyle = 'w-1/4',
+		headingStyle = 'w-1/4 underline text-xl',
+		buttonStyle = props.rounds.length
+			? 'bg-black text-white hover:bg-blue-300'
+			: 'bg-gray-400';
+
 	let list = props.rounds;
 	if (list.length) {
 		list = JSON.parse(props.rounds).map((round, index) => {
@@ -42,11 +47,12 @@ const QuizList = props => {
 				{list}
 			</ul>
 			<button
+				disabled={!props.rounds.length}
 				onClick={e => {
 					localStorage.clear();
 					props.setRounds([]);
 				}}
-				className='rounded bg-black text-white px-4 hover:bg-blue-300'
+				className={`rounded px-4 ${buttonStyle}`}
 			>
 				Delete All
 			</button>
