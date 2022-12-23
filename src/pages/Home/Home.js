@@ -10,20 +10,17 @@ const Home = () => {
 		difficulty: 'Any Difficulty',
 		type: 'Any Type'
 	});
-
-	// Causes the quiz list to re render when a new quiz round is added
-	const [roundAdded, setRoundAdded] = useState(false);
+	const [rounds, setRounds] = useState([]);
 
 	return (
 		<div>
-			<div className='flex my-8 mx-4'>
+			<div className='flex mt-8 mb-16 mx-4'>
 				<CreateQuiz
 					updateValues={updateValues}
 					quizValues={quizValues}
-					setRoundAdded={setRoundAdded}
-					roundAdded={roundAdded}
+					setRounds={setRounds}
 				/>
-				<QuizList roundAdded={roundAdded} />
+				<QuizList rounds={rounds} />
 			</div>
 			<button className='bg-black text-white rounded w-100 p-2 block mx-auto hover:bg-blue-300'>
 				Lets get Quizzical!

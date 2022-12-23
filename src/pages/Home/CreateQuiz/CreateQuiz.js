@@ -2,15 +2,18 @@ const CreateQuiz = props => {
 	const inputStyle = 'rounded w-full pl-2 block mb-4';
 	const handleSubmit = e => {
 		e.preventDefault();
-		let currentRounds = localStorage.getItem('rounds');
+		let currentRounds = localStorage.getItem('rounds'),
+			round;
 		if (!currentRounds) {
-			localStorage.setItem('rounds', JSON.stringify([props.quizValues]));
+			round = JSON.stringify([props.quizValues]);
+			localStorage.setItem('rounds', round);
 		} else {
-			currentRounds = JSON.parse(currentRounds);
-			currentRounds.push(props.quizValues);
-			localStorage.setItem('rounds', JSON.stringify(currentRounds));
+			round = JSON.parse(currentRounds);
+			round.push(props.quizValues);
+			round = JSON.stringify(round);
+			localStorage.setItem('rounds', round);
 		}
-		props.setRoundAdded(!props.roundAdded);
+		props.setRounds(round);
 	};
 	return (
 		<div className='flex flex-col  items-center mr-2 w-1/2 bg-green-300 rounded p-4 shadow-xl'>
